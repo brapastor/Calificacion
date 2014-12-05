@@ -9,5 +9,20 @@
     tools:context=".CalificationActivity">
 
 
-
+    <GridView
+        android:id="@+id/id_grid_escuela"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:columnWidth="90dp"
+        android:numColumns="2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:verticalSpacing="15dp"
+        android:horizontalSpacing="10dp"
+        android:layout_margin="10dp"
+        android:stretchMode="columnWidth"
+        />
 </RelativeLayout>

@@ -4,14 +4,31 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
+
+import java.util.ArrayList;
+
+import adapter.GridEscuelasAdapter;
+import model.ItemGrid;
 
 
 public class CalificationActivity extends Activity {
-
+    private GridView gridView;
+    private ArrayList<ItemGrid> items;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calification);
+
+        gridView = (GridView) findViewById(R.id.id_grid_escuela);
+
+        items = new ArrayList<ItemGrid>();
+
+        items.add(new ItemGrid("sabe", R.drawable.ic_launcher));
+        items.add(new ItemGrid("sabe", R.drawable.ic_launcher));
+        GridEscuelasAdapter adapter = new GridEscuelasAdapter(this, items);
+        gridView.setAdapter(adapter);
+
     }
 
 
