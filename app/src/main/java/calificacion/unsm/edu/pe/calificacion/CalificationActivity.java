@@ -24,8 +24,10 @@ public class CalificationActivity extends Activity {
 
         items = new ArrayList<ItemGrid>();
 
-        items.add(new ItemGrid("sabe", R.drawable.ic_launcher));
-        items.add(new ItemGrid("sabe", R.drawable.ic_launcher));
+        items.add(new ItemGrid("Sistemas e Informática", R.drawable.fisi));
+        items.add(new ItemGrid("Ciencias Economicas", R.drawable.fce));
+        items.add(new ItemGrid("Agronimía", R.drawable.fca));
+        items.add(new ItemGrid("Veterinaria", R.drawable.unsm_escudo));
         GridEscuelasAdapter adapter = new GridEscuelasAdapter(this, items);
         gridView.setAdapter(adapter);
 

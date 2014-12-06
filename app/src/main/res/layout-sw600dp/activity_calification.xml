@@ -2,21 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:background="#eaffea"
+
     tools:context=".CalificationActivity">
 
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"
+        android:layout_weight="0.1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Concurso de Gastronomía de la Universidad Nacional de San Martin"
         android:id="@+id/id_title"
+
        />
 
     <GridView
@@ -24,18 +24,10 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:columnWidth="90dp"
-        android:layout_below="@+id/id_title"
         android:numColumns="3"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:verticalSpacing="15dp"
-        android:horizontalSpacing="10dp"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:stretchMode="columnWidth"
+        android:verticalSpacing="30dp"
         />
 
 </LinearLayout>
