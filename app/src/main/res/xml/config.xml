@@ -9,4 +9,23 @@
             android:dialogTitle="@string/pre_url_dialog"
             />
     </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="@string/pre_jurado_title">
+
+        <EditTextPreference
+            android:title="@string/pre_jurado_name"
+            android:summary="@string/pre_jurado_sumary"
+            android:key="preJurado"
+            android:dialogTitle="@string/pre_jurado_dialog"
+            />
+
+        <EditTextPreference
+            android:title="@string/pre_jurado_profesion"
+            android:summary="Ingrese la Profesion del jurado"
+            android:key="preProfesionJurado"
+            android:dialogTitle="@string/pre_profesion_dialog"
+            />
+    </PreferenceCategory>
 </PreferenceScreen>

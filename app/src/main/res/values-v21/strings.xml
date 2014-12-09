@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Calificacion</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="pre_jurado_title">DATOS DEL JURADO</string>
     <string name="pre_jurado_name">Ingrese nombre de jurado</string>
     <string name="pre_jurado_sumary">Ingrese el nombre del jurado</string>
     <string name="pre_jurado_dialog">Nombre de Jurado</string>
     <string name="pre_jurado_profesion">Ingrese Profesion de Jurado</string>
     <string name="pre_profesion_dialog">Profesion de jurado</string>
-
 </resources>
