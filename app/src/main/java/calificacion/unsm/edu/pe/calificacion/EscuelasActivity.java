@@ -1,15 +1,13 @@
 package calificacion.unsm.edu.pe.calificacion;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -27,62 +25,63 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import adapter.GridEscuelasAdapter;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnItemClick;
+import model.Escuelas;
 import model.ItemGrid;
 
 
-public class CalificationActivity extends Activity {
-    private GridView gridView;
+public class EscuelasActivity extends ActionBarActivity {
     private static final int RESULT_CONFIG = 1;
     private ArrayList<ItemGrid> items;
+    private ArrayList<Escuelas> listEscuelas;
+
+    @InjectView(R.id.id_grid_escuela) GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calification);
-
-        gridView = (GridView) findViewById(R.id.id_grid_escuela);
+        //<editor-fold desc="INIT ESCUELAS">
+        listEscuelas = new ArrayList<Escuelas>();
+        listEscuelas.add(new Escuelas(R.drawable.fisi, "Sistemas e Informática", 1));
+        listEscuelas.add(new Escuelas(R.drawable.fca, "Agronomía", 2));
+        listEscuelas.add(new Escuelas(R.drawable.enfermeria, "Enfermería", 3));
+        listEscuelas.add(new Escuelas(R.drawable.obst, "Obstetricia", 4));
+        listEscuelas.add(new Escuelas(R.drawable.agroindustria, "Agroindustria", 5));
+        listEscuelas.add(new Escuelas(R.drawable.civil, "Ingenieria Civil", 6));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Arquitectura", 7));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Ingenieria Ambiental", 8));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Derecho y Ciencias Politicas", 9));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Medicina Humana", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Administración", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Medicina Humana", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Turismo", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Economía", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Contabilidad", 10));
+        listEscuelas.add(new Escuelas(R.drawable.unsm_escudo, "Idiomas", 10));
+        //</editor-fold>
+        setContentView(R.layout.activity_escuelas);
+        ButterKnife.inject(this);
+        getSupportActionBar().setSubtitle(getResources().getString(R.string.app_subtitle));
 
         //<editor-fold desc="CREATE GRID">
         items = new ArrayList<ItemGrid>();
-        items.add(new ItemGrid("Sistemas e Informática", R.drawable.fisi));
-        //items.add(new ItemGrid("Ciencias Economicas", R.drawable.fce));
-        items.add(new ItemGrid("Agronomía", R.drawable.fca));
-        items.add(new ItemGrid("Veterinaria", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Enfermeria", R.drawable.enfermeria));
-        items.add(new ItemGrid("Obstetricia", R.drawable.obst));
-        items.add(new ItemGrid("Agroindustria", R.drawable.agroindustria));
-        items.add(new ItemGrid("Ingenieria Civil", R.drawable.civil));
-        items.add(new ItemGrid("Arquitectura", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Ingenieria Ambiental", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Derecho y Ciencias Politicas", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Medicina Humana", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Administración", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Turismo", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Economía", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Contabilidad", R.drawable.unsm_escudo));
-        items.add(new ItemGrid("Idiomas", R.drawable.unsm_escudo));
+        for (Escuelas escuela : listEscuelas) {
+            items.add(new ItemGrid(escuela.getNombre(), escuela.getIcono()));
+        }
+
         GridEscuelasAdapter adapter = new GridEscuelasAdapter(this, items);
         gridView.setAdapter(adapter);
         //</editor-fold>
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), position + "", Toast.LENGTH_SHORT).show();
-                Intent intent = null;
-                switch (position) {
-
-                    case 0:
-                        intent = new Intent(CalificationActivity.this, CriterionOne.class);
-                        break;
-
-                }
-                startActivity(intent);
-            }
-        });
-
     }
 
+    @OnItemClick(R.id.id_grid_escuela)
+    void onItemClick(int position) {
+        Toast.makeText(this, "Clicked position " + position , Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,CalificacionActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,7 +94,7 @@ public class CalificationActivity extends Activity {
 
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(CalificationActivity.this,
+            Intent intent = new Intent(EscuelasActivity.this,
                     ConfigPreference.class);
             startActivityForResult(intent, RESULT_CONFIG);
         }
@@ -109,7 +108,6 @@ public class CalificationActivity extends Activity {
                 showSettings();
                 createJurado();
                 break;
-
             default:
                 break;
         }
@@ -140,7 +138,7 @@ public class CalificationActivity extends Activity {
         RequestParams params = new RequestParams();
         params.put("fullname", fullname);
         params.put("profesion", profesion);
-        Log.i("url",getUrl()+"jurados/nuevo");
+        Log.i("url", getUrl() + "jurados/nuevo");
 
         HttpDispachet.post(getUrl() + "jurados/nuevo", params, new AsyncHttpResponseHandler() {
             @Override
@@ -149,14 +147,13 @@ public class CalificationActivity extends Activity {
                     String value = new String(bytes, "UTF-8");
                     JSONObject mObject = new JSONObject(value);
                     JSONArray mArray = mObject.getJSONArray("datos");
-                    Log.e("OK",mObject.getString("Result"));
-                    if(mObject.getString("Result").equals("OK")){
+                    Log.e("OK", mObject.getString("Result"));
+                    if (mObject.getString("Result").equals("OK")) {
                         showJurado(mArray.getJSONObject(0).getInt("id"),
                                 mArray.getJSONObject(0).getString("profesion"),
                                 mArray.getJSONObject(0).getString("fullname"));
-                    }
-                    else{
-                        Log.e("error","Error");
+                    } else {
+                        Log.e("error", "Error");
                     }
                     //TODO: borrar
                     Log.i("response", mArray.toString());
@@ -176,8 +173,7 @@ public class CalificationActivity extends Activity {
 
     }
 
-    public void showJurado(int id,String fullname,String profesion)
-    {
+    public void showJurado(int id, String fullname, String profesion) {
         SharedPreferences mSharePreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
         mSharePreferences = getSharedPreferences("CalificationPreferences",
@@ -190,19 +186,18 @@ public class CalificationActivity extends Activity {
         editor.putInt("id", id);
         editor.commit();
         //TODO
-        Log.i("idJurado",getIdJurado()+"");
+        Log.i("idJurado", getIdJurado() + "");
     }
 
     public String getUrl() {
         SharedPreferences pref = getSharedPreferences(
-                "CalificationPreferences",MODE_PRIVATE);
-
+                "CalificationPreferences", MODE_PRIVATE);
         return pref.getString("url", "nada");
-
     }
+
     public int getIdJurado() {
         SharedPreferences pref = getSharedPreferences(
-                "CalificationPreferences",MODE_PRIVATE);
+                "CalificationPreferences", MODE_PRIVATE);
         return pref.getInt("id", 0);
     }
 }

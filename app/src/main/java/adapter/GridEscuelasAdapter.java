@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import calificacion.unsm.edu.pe.calificacion.R;
 import model.ItemGrid;
 
@@ -42,25 +44,25 @@ public class GridEscuelasAdapter extends BaseAdapter{
     }
 
     static class ViewHolder{
-        ImageView imagen;
-        TextView titulo;
+        @InjectView(R.id.id_img_content) ImageView imagen;
+        @InjectView(R.id.id_txt_content) TextView titulo;
+
+        public ViewHolder(View view) {
+            ButterKnife.inject(this, view);
+        }
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         View v = convertView;
-        viewHolder = new ViewHolder();
         if(convertView==null)
         {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v= inflater.inflate(R.layout.grid_item, null);
-            viewHolder.titulo = (TextView) v.findViewById(R.id.id_txt_content);
-            viewHolder.imagen = (ImageView) v.findViewById(R.id.id_img_content);
+            viewHolder = new ViewHolder(v);
             v.setTag(viewHolder);
-
         }
         ItemGrid grid = arrayitems.get(position);
-
         viewHolder = (ViewHolder) v.getTag();
         viewHolder.titulo.setText(grid.getTitulo());
         viewHolder.imagen.setImageResource(grid.getImagen());

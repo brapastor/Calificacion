@@ -2,14 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="calificacion.unsm.edu.pe.calificacion" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".CalificationActivity"
+            android:name=".EscuelasActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +22,14 @@
             android:name=".CriterionOne"
             android:label="@string/title_activity_criterion_one" >
         </activity>
-
         <activity
             android:name=".ConfigPreference"
             android:label="@string/action_settings" >
         </activity>
-
+        <activity
+            android:name=".CalificacionActivity"
+            android:label="@string/title_activity_calificacion" >
+        </activity>
     </application>
 
 </manifest>

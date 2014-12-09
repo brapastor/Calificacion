@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Calificacion</string>
+    <string name="app_name">Concurso de Gastronomía</string>
+    <string name="app_subtitle">UNSM - Tarapoto</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Configuración</string>
     <string name="title_activity_criterion_one">CriterionOne</string>
-
-
-     <string name="pre_url_title">Url de Servidor</string>
-     <string name="pre_summary">Ingrese una dirección del servidor de la aplicación</string>
-     <string name="pre_url_dialog">Dirección del servidor</string>
-     <string name="pre_url">Ingrese url del Servidor</string>
+    <string name="pre_url_title">Url de Servidor</string>
+    <string name="pre_summary">Ingrese una dirección del servidor de la aplicación</string>
+    <string name="pre_url_dialog">Dirección del servidor</string>
+    <string name="pre_url">Ingrese url del Servidor</string>
     <string name="pre_jurado_title">DATOS DEL JURADO</string>
     <string name="pre_jurado_name">Ingrese nombre de jurado</string>
     <string name="pre_jurado_sumary">Ingrese el nombre del jurado</string>
     <string name="pre_jurado_dialog">Nombre de Jurado</string>
     <string name="pre_jurado_profesion">Ingrese Profesion de Jurado</string>
     <string name="pre_profesion_dialog">Profesion de jurado</string>
-
+    <string name="title_activity_calificacion">Calificación</string>
 
 </resources>

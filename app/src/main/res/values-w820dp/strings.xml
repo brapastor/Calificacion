@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Calificacion</string>
+    <string name="app_name">Concurso de Gastronomía de la UNSM - Tarapoto</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="pre_jurado_title">DATOS DEL JURADO</string>
