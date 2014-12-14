@@ -10,5 +10,6 @@
     <string name="pre_jurado_dialog">Nombre de Jurado</string>
     <string name="pre_jurado_profesion">Ingrese Profesion de Jurado</string>
     <string name="pre_profesion_dialog">Profesion de jurado</string>
+    <string name="text_criterio_uno_title">1. Presentación de Expositor</string>
 
 </resources>

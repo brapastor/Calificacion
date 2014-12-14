@@ -16,6 +16,22 @@
     <string name="pre_jurado_dialog">Nombre de Jurado</string>
     <string name="pre_jurado_profesion">Ingrese Profesion de Jurado</string>
     <string name="pre_profesion_dialog">Profesion de jurado</string>
-    <string name="title_activity_calificacion">Calificación</string>
+    <string name="title_activity_calificacion">Criterios de Calificación</string>
+    <string name="text_criterio_uno_title">1. Presentación de Expositor</string>
+    <string name="validation_criterio1">Debe Ingresar un numero</string>
+    <string name="validation_criterio2">1. Presentación de Expositor</string>
+    <string name="validation_criterio3">1. Presentación de Expositor</string>
+    <string name="validation_criterio4">1. Presentación de Expositor</string>
+    <string name="validation_criterio5">1. Presentación de Expositor</string>
+    <string name="validation_criterio6">1. Presentación de Expositor</string>
 
+    <!--validacion regex-->
+    <string name="error_regex_validation">El valor no es admitido</string>
+
+    <string name="separation_warning">Es la primera vez que configura la Aplicación!!.\n\nPara poder usar la aplicación, tienes que configurar tu usuario como jurado.</string>
+    <string name="separation_warning_disable">Esto sólo se le pedirá por única vez.</string>
+    <string name="notice">Noticia:</string>
+    <string name="failed">Failed</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="cont">Continuar</string>
 </resources>

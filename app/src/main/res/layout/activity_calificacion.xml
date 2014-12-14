@@ -1,12 +1,369 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     tools:context="calificacion.unsm.edu.pe.calificacion.CalificacionActivity">
 
+    <ScrollView
+        android:id="@+id/content_scroll"
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/layout_content1">
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_one"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_criterio_uno_title"
+                app:typeface="roboto_bold"
+                android:textSize="22dp" />
 
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-2]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio1"
+                android:layout_marginTop="22dp"
+                android:layout_toEndOf="@+id/textView3"
+                android:layout_marginLeft="65dp"
+                android:layout_below="@+id/roboto_title_one"
+                android:layout_toRightOf="@+id/textView3"
+                android:maxLength="1" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 2"
+                android:id="@+id/textView3"
+                app:typeface="roboto_light"
+                android:layout_alignBottom="@+id/editCriterio1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="22dp"
+                android:textSize="22dp" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view"
+                android:layout_below="@+id/editCriterio1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_2"
+                android:layout_height="wrap_content"
+                android:hint="2. Presentación del Plato"
+                app:typeface="roboto_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 2"
+                android:id="@+id/textPuntaje2"
+                app:typeface="roboto_light"
+                android:textSize="22dp"
+                android:layout_below="@+id/roboto_title_2"
+                android:layout_toLeftOf="@+id/editCriterio1"
+                android:layout_marginTop="22dp" />
+
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-2]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio2"
+                android:layout_alignBottom="@+id/textPuntaje2"
+                android:layout_alignLeft="@+id/editCriterio1"
+                android:layout_alignStart="@+id/editCriterio1"
+                android:maxLength="1" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view3"
+                android:layout_below="@+id/editCriterio2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_3"
+                android:layout_height="wrap_content"
+                android:hint="3. Aroma"
+                app:typeface="roboto_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/view3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 4"
+                android:id="@+id/textPuntaje3"
+                app:typeface="roboto_light"
+                android:textSize="22dp"
+                android:layout_below="@+id/roboto_title_3"
+                android:layout_toLeftOf="@+id/editCriterio1"
+                android:layout_marginTop="22dp" />
+
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-4]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio3"
+                android:layout_alignBottom="@+id/textPuntaje3"
+                android:layout_alignLeft="@+id/editCriterio2"
+                android:layout_alignStart="@+id/editCriterio2"
+                android:maxLength="1" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view4"
+                android:layout_below="@+id/editCriterio3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_4"
+                android:layout_height="wrap_content"
+                android:hint="4. Sabor"
+                app:typeface="roboto_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/view4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 6"
+                android:id="@+id/textPuntaje4"
+                app:typeface="roboto_light"
+                android:textSize="22dp"
+                android:layout_below="@+id/roboto_title_4"
+                android:layout_toLeftOf="@+id/editCriterio1"
+                android:layout_marginTop="30dp" />
+
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-6]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio4"
+                android:layout_alignBottom="@+id/textPuntaje4"
+                android:layout_alignLeft="@+id/editCriterio2"
+                android:layout_alignStart="@+id/editCriterio2"
+                android:maxLength="1" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view5"
+                android:layout_below="@+id/editCriterio4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_5"
+                android:layout_height="wrap_content"
+                android:hint="5. Innovación"
+                app:typeface="roboto_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="14dp"
+                android:layout_below="@+id/view5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 4"
+                android:id="@+id/textPuntaje5"
+                app:typeface="roboto_light"
+                android:textSize="22dp"
+                android:layout_below="@+id/roboto_title_5"
+                android:layout_toLeftOf="@+id/editCriterio1"
+                android:layout_marginTop="30dp" />
+
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-4]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio5"
+                android:layout_alignBottom="@+id/textPuntaje5"
+                android:layout_alignLeft="@+id/editCriterio2"
+                android:layout_alignStart="@+id/editCriterio2"
+                android:maxLength="1" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view6"
+                android:layout_below="@+id/editCriterio5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/roboto_title_6"
+                android:layout_height="wrap_content"
+                android:hint="6. Contenido Nutritivo"
+                app:typeface="roboto_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/view6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Puntaje del 0 - 2"
+                android:id="@+id/textPuntaje6"
+                app:typeface="roboto_light"
+                android:textSize="22dp"
+                android:layout_below="@+id/roboto_title_6"
+                android:layout_toLeftOf="@+id/editCriterio1"
+                android:layout_marginTop="22dp" />
+
+            <com.andreabaccega.widget.FormEditText
+                xmlns:editTextFormGuyApp="http://schemas.android.com/apk/res-auto"
+                editTextFormGuyApp:testType="regexp"
+                editTextFormGuyApp:customRegexp="[0-2]"
+                editTextFormGuyApp:testErrorString="@string/error_regex_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textSize="15dp"
+                android:id="@+id/editCriterio6"
+                android:layout_alignBottom="@+id/textPuntaje6"
+                android:layout_alignLeft="@+id/editCriterio2"
+                android:layout_alignStart="@+id/editCriterio2"
+                android:maxLength="1" />
+
+            <View
+                android:layout_height="0.3dp"
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view7"
+                android:layout_below="@+id/editCriterio6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.dd.processbutton.iml.GenerateProcessButton
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Enviar Calificación"
+        android:layout_marginTop="-15dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        custom:textComplete="Calificacion Enviada"
+        custom:textProgress="Enviando Calificacion" />
 </RelativeLayout>

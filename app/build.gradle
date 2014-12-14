@@ -21,6 +21,16 @@ android {
         disable 'InvalidPackage'
     }
     packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
     productFlavors {
@@ -32,4 +42,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.2'
     compile 'com.loopj.android:android-async-http:1.4.6'
     compile 'com.jakewharton:butterknife:6.0.0'
+    compile 'com.github.johnkil.android-robototextview:robototextview:2.2.0'
+    compile 'com.github.dmytrodanylyk.android-process-button:library:0.0.5'
+    compile 'com.andreabaccega:android-form-edittext:1.1.0@aar'
 }

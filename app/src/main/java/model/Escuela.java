@@ -3,15 +3,18 @@ package model;
 /**
  * Created by Investigación2 on 09/12/2014.
  */
-public class Escuelas {
-    private int icono;
+public class Escuela {
     private String nombre;
     private int id;
+    private int estado;
+    private int icono;
 
-    public Escuelas(int icono, String nombre, int id) {
-        this.icono = icono;
-        this.nombre = nombre;
-        this.id = id;
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
     public int getIcono() {

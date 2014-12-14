@@ -13,17 +13,29 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"
+        android:layout_weight="0.17"
+        android:layout_marginBottom="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Concurso de Gastronomía de la Universidad Nacional de San Martin"
         android:id="@+id/id_title"
        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingTop="-10dp"
+        android:text="Jurado: "
+        android:paddingBottom="0dp"
+        android:id="@+id/jurado"
+        android:layout_gravity="center_horizontal" />
 
     <GridView
         android:id="@+id/id_grid_escuela"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
+        android:paddingTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:columnWidth="90dp"
@@ -36,6 +48,7 @@
         android:horizontalSpacing="10dp"
         android:layout_margin="10dp"
         android:stretchMode="columnWidth"
+        android:paddingBottom="20dp"
         />
 
 </LinearLayout>
